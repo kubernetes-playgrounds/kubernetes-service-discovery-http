@@ -15,3 +15,6 @@ docker-build:
 
 docker-push:
 	docker push guanw0826/example-client
+
+docker-run:
+	docker run -d -p 8082:8081 guanw0826/example-client
