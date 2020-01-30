@@ -17,4 +17,4 @@ docker-push:
 	docker push guanw0826/example-server
 
 docker-run:
-	docker run -p 8081:8081 guanw0826/example-server
+	docker run -d -p 8081:8081 guanw0826/example-server
