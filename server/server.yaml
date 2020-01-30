@@ -32,3 +32,16 @@ spec:
       port: 8081
       targetPort: 8081
       name: http
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: server-svc-ingress
+spec:
+  rules:
+    - http:
+        paths:
+          - path: /
+            backend:
+              serviceName: server-svc
+              servicePort: 8081
