@@ -4,7 +4,7 @@ kind: Deployment
 metadata:
   name: server
 spec:
-  replicas: 1 #TODO check if there's a way to make load balancer work with kubectl port-forward
+  replicas: 1
   selector:
     matchLabels:
       app: server
@@ -27,7 +27,7 @@ spec:
   selector:
     app: server
   type: NodePort # Expose the Pods by opening a port on each Node and proxying it to the service.
-  ports: # Take incoming HTTP requests on port 9090 and forward them to the targetPort of 8080
+  ports: # Take incoming HTTP requests on port 8081 and forward them to the targetPort of 8081
     - protocol: TCP
       port: 8081
       targetPort: 8081
