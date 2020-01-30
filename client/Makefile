@@ -4,7 +4,7 @@ GOBUILD=$(GOCMD) build
 GOCLEAN=$(GOCMD) clean
 GOTEST=$(GOCMD) test
 GOGET=$(GOCMD) get
-BINARY_NAME=ct_dns_binary
+BINARY_NAME=client_binary
 BINARY_UNIX=$(BINARY_NAME)_unix
 
 build-linux:
@@ -12,3 +12,6 @@ build-linux:
 
 docker-build:
 	docker build -t guanw0826/example-client .
+
+docker-push:
+	docker push guanw0826/example-client
