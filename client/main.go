@@ -4,12 +4,19 @@ import (
 	"bufio"
 	"fmt"
 	"net/http"
+	"os"
 	"time"
 )
 
 func main() {
+	var url string
+	if os.Getenv("DEPLOYMENT") == "PRODUCTION" {
+		url = "server-svc"
+	} else {
+		url = "localhost"
+	}
 	for {
-		resp, err := http.Get("http://server-svc:8081/Jude")
+		resp, err := http.Get(fmt.Sprintf("http://%s:8081/Jude", url))
 		if err != nil {
 			fmt.Println(err.Error())
 		} else {
