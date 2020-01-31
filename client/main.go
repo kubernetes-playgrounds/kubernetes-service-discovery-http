@@ -13,7 +13,7 @@ func main() {
 	if os.Getenv("DEPLOYMENT") == "PRODUCTION" {
 		url = "server-svc"
 	} else {
-		url = "localhost"
+		url = "0.0.0.0"
 	}
 	for {
 		resp, err := http.Get(fmt.Sprintf("http://%s:8081/Jude", url))

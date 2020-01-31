@@ -11,5 +11,6 @@ func main() {
 }
 
 func HelloServer(w http.ResponseWriter, r *http.Request) {
+	fmt.Println("received client request ", r.URL.Path[1:])
 	fmt.Fprintf(w, "Hello, %s!", r.URL.Path[1:])
 }
