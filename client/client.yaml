@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: client
-          image: guanw0826/example-client:latest
+          image: guanw0826/kubernetes-service-discovery-http-client:latest
           env:
             - name: DEPLOYMENT
               value: PRODUCTION

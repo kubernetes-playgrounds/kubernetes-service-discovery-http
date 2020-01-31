@@ -1,9 +1,6 @@
 # Go parameters
 GOCMD=go
 GOBUILD=$(GOCMD) build
-GOCLEAN=$(GOCMD) clean
-GOTEST=$(GOCMD) test
-GOGET=$(GOCMD) get
 BINARY_NAME=client_binary
 BINARY_UNIX=$(BINARY_NAME)_unix
 
@@ -11,10 +8,10 @@ build-linux:
 	CGO_ENABLED=0 GOOS=linux GOARCH=amd64 $(GOBUILD) -o $(BINARY_UNIX) -v
 
 docker-build:
-	docker build -t guanw0826/example-client .
+	docker build -t guanw0826/kubernetes-service-discovery-http-client .
 
 docker-push:
-	docker push guanw0826/example-client
+	docker push guanw0826/kubernetes-service-discovery-http-client
 
 docker-run:
-	docker run -d -p 8081:8081 guanw0826/example-client
+	docker run -d guanw0826/kubernetes-service-discovery-http-client
