@@ -19,8 +19,12 @@ This project is to showcase how to deploy multiple service with kubernetes and r
    ```
 
 4. verify the client & server are working by
+
    ```
    $ kubectl get pods
    $ kubectl logs -f <client-pod-name-from-output-above>
    ```
+
    you should see client prints out response from server every few seconds
+
+5. Note that if you scale up server pods, `NodePort` will still route client request to the previous pod but now if you start a new client, NodePort should send it to new pod as kubernetes aims to distribute load evenly.
