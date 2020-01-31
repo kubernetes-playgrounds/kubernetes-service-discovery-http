@@ -16,3 +16,6 @@ spec:
       containers:
         - name: client
           image: guanw0826/example-client:latest
+          env:
+            - name: DEPLOYMENT
+              value: PRODUCTION
