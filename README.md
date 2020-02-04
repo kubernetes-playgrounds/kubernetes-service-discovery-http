@@ -7,7 +7,7 @@ This project is to showcase how to deploy multiple service with kubernetes and r
 2. run server as pod/service in kube cluster
 
    ```
-   $ cd client && kubectl apply -f server.yaml
+   $ cd server && kubectl apply -f server.yaml
    ```
 
    You could verify server is running by curl ingress host/port (which is minikube's ip and port 80)
@@ -15,7 +15,7 @@ This project is to showcase how to deploy multiple service with kubernetes and r
 3. run client as pod/service in kube cluster
 
    ```
-   $ cd server && kubectl apply -f client.yaml
+   $ cd client && kubectl apply -f client.yaml
    ```
 
 4. verify the client & server are working by
